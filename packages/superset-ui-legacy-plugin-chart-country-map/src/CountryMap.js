@@ -24,6 +24,7 @@ import { getSequentialSchemeRegistry } from '@superset-ui/color';
 import { getNumberFormatter } from '@superset-ui/number-format';
 import countries from './countries';
 import './CountryMap.css';
+import { t } from '@superset-ui/translation';
 
 const propTypes = {
   data: PropTypes.arrayOf(
@@ -136,7 +137,7 @@ function CountryMap(element, props) {
         name = feature.properties.NAME_1;
       }
     }
-    bigText.text(name);
+    bigText.text(t(name));
   };
 
   const updateMetrics = function updateMetrics(region) {
