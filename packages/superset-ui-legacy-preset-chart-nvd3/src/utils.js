@@ -21,7 +21,7 @@ import d3 from 'd3';
 import d3tip from 'd3-tip';
 import dompurify from 'dompurify';
 import { getNumberFormatter } from '@superset-ui/number-format';
-import { smartDateFormatter } from '@superset-ui/time-format';
+import { getSmartDateFormatter } from '@superset-ui/time-format';
 
 // Regexp for the label added to time shifted series
 // (1 hour offset, 2 days offset, etc.)
@@ -45,7 +45,7 @@ export function cleanColorInput(value) {
  * @param {*} format
  */
 export function getTimeOrNumberFormatter(format) {
-  return format === 'smart_date' ? smartDateFormatter : getNumberFormatter(format);
+  return format === 'smart_date' ? getSmartDateFormatter() : getNumberFormatter(format);
 }
 
 export function drawBarValues(svg, data, stacked, axisFormat) {
